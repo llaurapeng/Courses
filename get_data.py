@@ -63,6 +63,7 @@ class setup:
         self.driver.find_element (By.ID, 'Submit').click()
 
         print ('success')
+        st.write ('logged_in')
 
         self.driver.get ('https://eval-duke.evaluationkit.com/Report/Public/Results?Course=Writing+101&Instructor=&TermId=&Year=&AreaId=&QuestionKey=780869-0&Search=true')
 
@@ -86,7 +87,7 @@ class setup:
 
         self.url = f'https://eval-duke.evaluationkit.com/Report/Public/Results?Course={course}&Instructor={instructor}'
 
-        course_field = self.driver.find_element(By.CSS_SELECTOR, '.Course').send_keys(course)
+        course_field = self.driver.find_element(By.ID, 'Course').send_keys(course)
         instructor_field = self.driver.find_element(By.ID, 'Instructor').send_keys (instructor)
 
         self.driver.find_element (By.CSS_SELECTOR, '.btn.btn-primary.sr-search-btn-results').click()
