@@ -20,6 +20,7 @@ class setup:
 
 
     def __init__(self):
+        '''
         curr_dir = os.getcwd()
         dir = curr_dir + '/courses'
         
@@ -34,7 +35,7 @@ class setup:
         chrome_options.add_argument("--no-sandbox")  # Optional: For certain environments
         chrome_options.add_argument("--disable-dev-shm-usage")  # Optional: For certain environments
         # Specify the path to your ChromeDriver
-    
+
         path = curr_dir + '/chromedriver'
         st.write (path)
         service = Service(path)
@@ -42,8 +43,9 @@ class setup:
         self.driver = webdriver.Chrome (service = service, options = chrome_options)
 
         
-
-
+        '''
+        geckodriver_path = '/path/to/geckodriver'
+        self.driver = webdriver.Firefox(executable_path=geckodriver_path)
 
         #self.driver = driver.get_driver()
 
