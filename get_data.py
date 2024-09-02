@@ -46,9 +46,9 @@ class setup:
         '''
 
         options = webdriver.ChromeOptions()
-        options.add_argument('--headless')
-        options.add_argument('--disable-gpu')
-        options.add_argument('--window-size=1920,1200')
+        #options.add_argument('--headless')
+        #ptions.add_argument('--disable-gpu')
+        #options.add_argument('--window-size=1920,1200')
         self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
                                   options=options)
   
@@ -86,7 +86,7 @@ class setup:
 
         self.url = f'https://eval-duke.evaluationkit.com/Report/Public/Results?Course={course}&Instructor={instructor}'
 
-        course_field = self.driver.find_element(By.ID, 'Course').send_keys(course)
+        course_field = self.driver.find_element(By.CSS_SELECTOR, '.Course').send_keys(course)
         instructor_field = self.driver.find_element(By.ID, 'Instructor').send_keys (instructor)
 
         self.driver.find_element (By.CSS_SELECTOR, '.btn.btn-primary.sr-search-btn-results').click()
