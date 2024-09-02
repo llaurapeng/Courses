@@ -1,5 +1,4 @@
 streamlit
-time
 selenium
 pdfplumber
 webdriver_manager.chrome
