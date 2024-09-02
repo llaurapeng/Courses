@@ -25,6 +25,7 @@ with st.spinner ('waiting to set up...'):
 
 st.success ('Done')
 
+'''
 #ENTER CLASS------------------------------------------------------------------------
 
 input = st.text_input ('Enter a Class Name', placeholder = '', on_change = None)
@@ -62,4 +63,4 @@ for prof in results:
 
 st.success ('Done')
 
-
+'''

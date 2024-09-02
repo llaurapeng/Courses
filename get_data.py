@@ -89,6 +89,7 @@ class setup:
         
 
         self.driver.get ('https://eval-duke.evaluationkit.com/Report/Public/Results?Course=Writing+101&Instructor=&TermId=&Year=&AreaId=&QuestionKey=780869-0&Search=true')
+        
         course_field = self.driver.find_element(By.ID, 'Course').send_keys(course)
         instructor_field = self.driver.find_element(By.ID, 'Instructor').send_keys (instructor)
 
