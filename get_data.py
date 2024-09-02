@@ -46,7 +46,7 @@ class setup:
 
         self.driver = webdriver.Chrome(
             service=Service(
-                ChromeDriverManager().install()
+                ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
             ),
             options=options,
         )
