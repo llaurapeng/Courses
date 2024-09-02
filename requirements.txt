@@ -1,5 +1,3 @@
 streamlit
 selenium
 pdfplumber
-webdriver_manager.chrome
-webdriver_manager.core.os_manager
