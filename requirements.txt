@@ -1,4 +1,4 @@
-streamlit
-selenium
+streamlit==1.35.0
+selenium==4.21.0
 pdfplumber
-webdriver_manager
+webdriver-manager==4.0.2
