@@ -52,10 +52,10 @@ class setup:
         options.add_argument('--headless')
         options.add_argument('--disable-gpu')
         options.add_argument('--window-size=1920,1200')
-        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
                                   options=options)
   
-        self.driver.get ('https://eval-duke.evaluationkit.com/Respondent')
+        driver.get ('https://eval-duke.evaluationkit.com/Respondent')
     
     #SIGN IN ----------------------------------------------------------------------
     def signin (self): 
