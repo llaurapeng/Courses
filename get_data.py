@@ -6,6 +6,9 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.core.os_manager import ChromeType
 
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 import driver
 import streamlit as st
 import pdfplumber
@@ -62,11 +65,8 @@ class setup:
         self.driver.find_element (By.ID, 'j_password').send_keys (password)
         self.driver.find_element (By.ID, 'Submit').click()
 
-        print ('success')
+        st.write ('loggedin')
         st.write ('logged_in')
-
-        self.driver.get ('https://eval-duke.evaluationkit.com/Report/Public/Results?Course=Writing+101&Instructor=&TermId=&Year=&AreaId=&QuestionKey=780869-0&Search=true')
-
 
 
     #SEARCH FOR COURSE----------------------------------------------------------------------
@@ -83,11 +83,13 @@ class setup:
             instructor = '&Search=true'
         else:
             instructor = instructor.replace (' ', '+')
+        self.driver.get ('https://eval-duke.evaluationkit.com/Report/Public/Results?Course=Writing+101&Instructor=&TermId=&Year=&AreaId=&QuestionKey=780869-0&Search=true')
 
 
         self.url = f'https://eval-duke.evaluationkit.com/Report/Public/Results?Course={course}&Instructor={instructor}'
-
-        course_field = self.driver.find_element(By.ID, 'course').send_keys(course)
+        
+        course_field = wait.until(EC.presence_of_element_located((By.ID, 'course')))
+        course_field = self.driver.find_element(By.ID, 'Course').send_keys(course)
         instructor_field = self.driver.find_element(By.ID, 'Instructor').send_keys (instructor)
 
         self.driver.find_element (By.CSS_SELECTOR, '.btn.btn-primary.sr-search-btn-results').click()
