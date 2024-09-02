@@ -65,12 +65,12 @@ class setup:
         self.driver.find_element (By.ID, 'j_password').send_keys (password)
         self.driver.find_element (By.ID, 'Submit').click()
 
-        st.write ('loggedin')
         st.write ('logged_in')
 
 
     #SEARCH FOR COURSE----------------------------------------------------------------------
     def search_course (self, course_val, instructor):
+        st.write ('searching for course')
 
         if course_val == '':
             course = '&Search=true'
@@ -83,12 +83,12 @@ class setup:
             instructor = '&Search=true'
         else:
             instructor = instructor.replace (' ', '+')
-        self.driver.get ('https://eval-duke.evaluationkit.com/Report/Public/Results?Course=Writing+101&Instructor=&TermId=&Year=&AreaId=&QuestionKey=780869-0&Search=true')
 
 
         self.url = f'https://eval-duke.evaluationkit.com/Report/Public/Results?Course={course}&Instructor={instructor}'
         
-        course_field = wait.until(EC.presence_of_element_located((By.ID, 'course')))
+
+        self.driver.get ('https://eval-duke.evaluationkit.com/Report/Public/Results?Course=Writing+101&Instructor=&TermId=&Year=&AreaId=&QuestionKey=780869-0&Search=true')
         course_field = self.driver.find_element(By.ID, 'Course').send_keys(course)
         instructor_field = self.driver.find_element(By.ID, 'Instructor').send_keys (instructor)
 
