@@ -22,7 +22,7 @@ class setup:
     def __init__(self):
         curr_dir = os.getcwd()
         dir = curr_dir + '/courses'
-        '''
+        
 
         chrome_options = Options()
         chrome_options.add_experimental_option ('prefs', {
@@ -34,15 +34,18 @@ class setup:
         chrome_options.add_argument("--no-sandbox")  # Optional: For certain environments
         chrome_options.add_argument("--disable-dev-shm-usage")  # Optional: For certain environments
         # Specify the path to your ChromeDriver
-        service = Service('/Users/mqw/Desktop/Software Enginner Progress/Selenium/chromedriver')
+    
+        path = curr_dir + '/chromedriver'
+        st.write (path)
+        service = Service(path)
 
         self.driver = webdriver.Chrome (service = service, options = chrome_options)
 
-        '''
+        
 
 
 
-        self.driver = driver.get_driver()
+        #self.driver = driver.get_driver()
 
         #go to log in website
         self.driver.get ('https://eval-duke.evaluationkit.com/Respondent')
