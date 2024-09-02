@@ -1,0 +1,8 @@
+streamlit
+os
+shutil
+time
+selenium
+pdfplumber
+webdriver_manager.chrome
+webdriver_manager.core.os_manager

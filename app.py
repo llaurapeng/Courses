@@ -17,7 +17,7 @@ if delete:
             os.remove(file_path)
 
 
-#SET UP CHROME DRIVER------------------------------------------------------
+#SET UP CHROME DRIVER-----------------------------------------------------
 
 with st.spinner ('waiting to set up...'):
     set_up = setup()
