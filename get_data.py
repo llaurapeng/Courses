@@ -40,12 +40,10 @@ class setup:
 
         '''
 
-        options = Options()
-        options.add_argument("--disable-gpu")
-        options.add_argument("--headless")
+
 
         self.driver = driver.get_driver()
-        
+
         #go to log in website
         self.driver.get ('https://eval-duke.evaluationkit.com/Respondent')
 
