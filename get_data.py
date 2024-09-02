@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.core.os_manager import ChromeType
 
-
+import driver
 import streamlit as st
 import pdfplumber
 import os
@@ -44,9 +44,8 @@ class setup:
         options.add_argument("--disable-gpu")
         options.add_argument("--headless")
 
-        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-
-
+        self.driver = driver.get_driver()
+        
         #go to log in website
         self.driver.get ('https://eval-duke.evaluationkit.com/Respondent')
 
