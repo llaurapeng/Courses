@@ -44,12 +44,7 @@ class setup:
         options.add_argument("--disable-gpu")
         options.add_argument("--headless")
 
-        self.driver = webdriver.Chrome(
-            service=Service(
-                ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
-            ),
-            options=options,
-        )
+        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 
         #go to log in website
