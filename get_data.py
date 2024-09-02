@@ -11,7 +11,7 @@ import streamlit as st
 import pdfplumber
 import os
 import time
-import shutil
+
 
 class setup:
     
