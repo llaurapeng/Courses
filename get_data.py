@@ -44,15 +44,16 @@ class setup:
 
         
         '''
-        geckodriver_path = '/path/to/geckodriver'
-        self.driver = webdriver.Firefox(executable_path=geckodriver_path)
 
-        #self.driver = driver.get_driver()
-
-        #go to log in website
+        options = webdriver.ChromeOptions()
+        options.add_argument('--headless')
+        options.add_argument('--disable-gpu')
+        options.add_argument('--window-size=1920,1200')
+        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
+                                  options=options)
+  
         self.driver.get ('https://eval-duke.evaluationkit.com/Respondent')
-
-
+    
     #SIGN IN ----------------------------------------------------------------------
     def signin (self): 
         username = 'lp244'
