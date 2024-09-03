@@ -127,7 +127,7 @@ class setup:
         driver.find_element (By.CSS_SELECTOR, '.btn.btn-primary.sr-search-btn-results').click()
         driver.get (self.url)
 
-'''
+
     
     #OPEN NAVIGATION ----------------------------------------------------------------------
     def open_navig (self):
