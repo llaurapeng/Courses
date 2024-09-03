@@ -72,6 +72,7 @@ class setup:
         st.write ('logged_in')
 
         st.write ('searching for course')
+
         course_val = 'hi'
         instructor = 'bye'
 
@@ -100,7 +101,7 @@ class setup:
         driver.get (self.url)
 
 
-'''
+
     #SEARCH FOR COURSE----------------------------------------------------------------------
     def search_course (self, driver, course_val, instructor):
         st.write ('searching for course')
