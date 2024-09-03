@@ -94,8 +94,8 @@ class setup:
 
         driver.get ('https://eval-duke.evaluationkit.com/Report/Public/Results?Course=Writing+101&Instructor=&TermId=&Year=&AreaId=&QuestionKey=780869-0&Search=true')
         
-        course_field = self.driver.find_element(By.ID, 'Course').send_keys(course)
-        instructor_field = self.driver.find_element(By.ID, 'Instructor').send_keys (instructor)
+        course_field = driver.find_element(By.ID, 'Course').send_keys(course)
+        instructor_field = driver.find_element(By.ID, 'Instructor').send_keys (instructor)
 
         driver.find_element (By.CSS_SELECTOR, '.btn.btn-primary.sr-search-btn-results').click()
         driver.get (self.url)
