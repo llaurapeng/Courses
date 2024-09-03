@@ -48,6 +48,8 @@ class setup:
         
         '''
 
+    def get_driver():
+
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
         options.add_argument('--disable-gpu')
@@ -56,18 +58,20 @@ class setup:
                                   options=options)
   
         driver.get ('https://eval-duke.evaluationkit.com/Respondent')
+
+        return driver
     
     #SIGN IN ----------------------------------------------------------------------
-    def signin (self): 
+    def signin (self, driver): 
         username = 'lp244'
         password = 'Dolphinldp2004!'
-        self.driver.find_element (By.ID, 'j_username').send_keys (username)
-        self.driver.find_element (By.ID, 'j_password').send_keys (password)
-        self.driver.find_element (By.ID, 'Submit').click()
+        driver.find_element (By.ID, 'j_username').send_keys (username)
+        driver.find_element (By.ID, 'j_password').send_keys (password)
+        driver.find_element (By.ID, 'Submit').click()
 
         st.write ('logged_in')
 
-
+'''
     #SEARCH FOR COURSE----------------------------------------------------------------------
     def search_course (self, course_val, instructor):
         st.write ('searching for course')
@@ -242,7 +246,7 @@ class setup:
             st.write ('No File Was Found')
 
 
-
+'''
             
 
 
