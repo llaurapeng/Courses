@@ -275,12 +275,3 @@ class setup:
         except: 
             #self.results ['text'] = 'No file'
             st.write ('No File Was Found')
-
-
-'''
-            
-
-
-
-
-            
