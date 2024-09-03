@@ -73,7 +73,7 @@ class setup:
 
         st.write ('searching for course')
         course_val = 'hi'
-        instructor = 'hi'
+        instructor = 'bye'
 
         if course_val == '':
             course = '&Search=true'
