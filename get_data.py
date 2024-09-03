@@ -72,6 +72,8 @@ class setup:
         st.write ('logged_in')
 
         st.write ('searching for course')
+        course_val = 'hi'
+        instructor = 'hi'
 
         if course_val == '':
             course = '&Search=true'
