@@ -28,13 +28,13 @@ st.success ('Done')
 
 
 #ENTER CLASS------------------------------------------------------------------------
-
+'''
 input = st.text_input ('Enter a Class Name', placeholder = '', on_change = None)
 input2 = st.text_input ('Enter a Instructor Name', placeholder = '',on_change = None)
 
 
 set_up.search_course(driver, input, input2)
-'''
+
 set_up.open_navig()
 results = set_up.course_list()
 
