@@ -201,7 +201,7 @@ class setup:
                 button.click()
 
             else:
-                print ('File already downloaded')
+                print ('File already downloded')
 
 
             #add values into a dictionary---------------------
