@@ -48,7 +48,7 @@ class setup:
         
         '''
 
-    def get_driver():
+    def driver(self):
 
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
