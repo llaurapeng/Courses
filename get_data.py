@@ -71,9 +71,9 @@ class setup:
 
         st.write ('logged_in')
 
-'''
+
     #SEARCH FOR COURSE----------------------------------------------------------------------
-    def search_course (self, course_val, instructor):
+    def search_course (self, driver, course_val, instructor):
         st.write ('searching for course')
 
         if course_val == '':
@@ -92,14 +92,15 @@ class setup:
         self.url = f'https://eval-duke.evaluationkit.com/Report/Public/Results?Course={course}&Instructor={instructor}'
         
 
-        self.driver.get ('https://eval-duke.evaluationkit.com/Report/Public/Results?Course=Writing+101&Instructor=&TermId=&Year=&AreaId=&QuestionKey=780869-0&Search=true')
+        driver.get ('https://eval-duke.evaluationkit.com/Report/Public/Results?Course=Writing+101&Instructor=&TermId=&Year=&AreaId=&QuestionKey=780869-0&Search=true')
         
         course_field = self.driver.find_element(By.ID, 'Course').send_keys(course)
         instructor_field = self.driver.find_element(By.ID, 'Instructor').send_keys (instructor)
 
-        self.driver.find_element (By.CSS_SELECTOR, '.btn.btn-primary.sr-search-btn-results').click()
-        self.driver.get (self.url)
+        driver.find_element (By.CSS_SELECTOR, '.btn.btn-primary.sr-search-btn-results').click()
+        driver.get (self.url)
 
+'''
     
     #OPEN NAVIGATION ----------------------------------------------------------------------
     def open_navig (self):
