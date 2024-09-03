@@ -25,7 +25,7 @@ class setup:
     def __init__(self):
        
         curr_dir = os.getcwd()
-        dir = curr_dir + '/courses'
+        dir = curr_dir 
         
 
         chrome_options = Options()
