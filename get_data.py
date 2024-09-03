@@ -71,7 +71,34 @@ class setup:
 
         st.write ('logged_in')
 
+        st.write ('searching for course')
 
+        if course_val == '':
+            course = '&Search=true'
+        else: 
+            course = course_val
+            course = course.replace (' ', '+')
+
+
+        if instructor == '':
+            instructor = '&Search=true'
+        else:
+            instructor = instructor.replace (' ', '+')
+
+
+        self.url = f'https://eval-duke.evaluationkit.com/Report/Public/Results?Course={course}&Instructor={instructor}'
+        
+
+        driver.get ('https://eval-duke.evaluationkit.com/Report/Public/Results?Course=Writing+101&Instructor=&TermId=&Year=&AreaId=&QuestionKey=780869-0&Search=true')
+        
+        course_field = driver.find_element(By.ID, 'Course').send_keys(course)
+        instructor_field = driver.find_element(By.ID, 'Instructor').send_keys (instructor)
+
+        driver.find_element (By.CSS_SELECTOR, '.btn.btn-primary.sr-search-btn-results').click()
+        driver.get (self.url)
+
+
+'''
     #SEARCH FOR COURSE----------------------------------------------------------------------
     def search_course (self, driver, course_val, instructor):
         st.write ('searching for course')
