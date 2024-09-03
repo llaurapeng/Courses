@@ -21,8 +21,8 @@ if delete:
 
 with st.spinner ('waiting to set up...'):
     set_up = setup()
-    driver = set_up.driver()
-    set_up.signin(driver)
+    #driver = set_up.driver()
+    set_up.signin()
 
 st.success ('Done')
 

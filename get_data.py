@@ -23,7 +23,7 @@ class setup:
 
 
     def __init__(self):
-        '''
+       
         curr_dir = os.getcwd()
         dir = curr_dir + '/courses'
         
@@ -34,9 +34,9 @@ class setup:
         "download.prompt_for_download": False,   
         "profile.content_settings.exceptions.automatic_downloads.*.setting": 1 
         })
-        chrome_options.add_argument("--headless")  # Run in headless mode
-        chrome_options.add_argument("--no-sandbox")  # Optional: For certain environments
-        chrome_options.add_argument("--disable-dev-shm-usage")  # Optional: For certain environments
+        #chrome_options.add_argument("--headless")  # Run in headless mode
+        #chrome_options.add_argument("--no-sandbox")  # Optional: For certain environments
+        #chrome_options.add_argument("--disable-dev-shm-usage")  # Optional: For certain environments
         # Specify the path to your ChromeDriver
 
         path = curr_dir + '/chromedriver'
@@ -45,8 +45,11 @@ class setup:
 
         self.driver = webdriver.Chrome (service = service, options = chrome_options)
 
+        self.driver.get ('https://eval-duke.evaluationkit.com/Respondent')
+
         
-        '''
+
+    '''
 
     def driver(self):
 
@@ -57,17 +60,19 @@ class setup:
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
                                   options=options)
   
-        driver.get ('https://eval-duke.evaluationkit.com/Respondent')
+  
+    
 
         return driver
+    '''
     
     #SIGN IN ----------------------------------------------------------------------
-    def signin (self, driver): 
+    def signin (self): 
         username = 'lp244'
         password = 'Dolphinldp2004!'
-        driver.find_element (By.ID, 'j_username').send_keys (username)
-        driver.find_element (By.ID, 'j_password').send_keys (password)
-        driver.find_element (By.ID, 'Submit').click()
+        self.driver.find_element (By.ID, 'j_username').send_keys (username)
+        self.driver.find_element (By.ID, 'j_password').send_keys (password)
+        self.driver.find_element (By.ID, 'Submit').click()
 
         st.write ('logged_in')
 
@@ -92,13 +97,13 @@ class setup:
         self.url = f'https://eval-duke.evaluationkit.com/Report/Public/Results?Course={course}&Instructor={instructor}'
         
 
-        driver.get ('https://eval-duke.evaluationkit.com/Report/Public/Results?Course=Writing+101&Instructor=&TermId=&Year=&AreaId=&QuestionKey=780869-0&Search=true')
+        self.driver.get ('https://eval-duke.evaluationkit.com/Report/Public/Results?Course=Writing+101&Instructor=&TermId=&Year=&AreaId=&QuestionKey=780869-0&Search=true')
         
-        course_field = driver.find_element(By.ID, 'Course').send_keys(course)
-        instructor_field = driver.find_element(By.ID, 'Instructor').send_keys (instructor)
+        course_field = self.driver.find_element(By.ID, 'Course').send_keys(course)
+        instructor_field = self.driver.find_element(By.ID, 'Instructor').send_keys (instructor)
 
-        driver.find_element (By.CSS_SELECTOR, '.btn.btn-primary.sr-search-btn-results').click()
-        driver.get (self.url)
+        self.driver.find_element (By.CSS_SELECTOR, '.btn.btn-primary.sr-search-btn-results').click()
+        self.driver.get (self.url)
 
 
 
